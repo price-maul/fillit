@@ -6,7 +6,7 @@
 /*   By: pmaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 17:32:05 by pmaul             #+#    #+#             */
-/*   Updated: 2020/03/05 17:57:02 by pmaul            ###   ########.fr       */
+/*   Updated: 2020/03/05 20:51:31 by pmaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ static int		blockchecker(char *tetri)
 	i = 0;
 	blocks = 0;
 	freinds = 0;
-	i = 0;
-	blocks = 0;
-	freinds = 0;
 	while (i < 20)
 	{
 		if (tetri[i] == '#')
@@ -62,6 +59,8 @@ int				checkblock(char *tetri, int ret)
 	i = 0;
 	line = 0;
 	if (ret != 21 && ret != 20)
+		return (0);
+	if (ft_strlen(tetri) != (size_t)ret)
 		return (0);
 	while (i < 20)
 	{

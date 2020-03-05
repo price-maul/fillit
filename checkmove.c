@@ -6,7 +6,7 @@
 /*   By: pmaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 21:15:43 by pmaul             #+#    #+#             */
-/*   Updated: 2020/03/04 21:18:40 by pmaul            ###   ########.fr       */
+/*   Updated: 2020/03/05 21:10:37 by pmaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 int		blockletter(char *blockcode, char *buf, char c, int xyjbm[5])
 {
 	if (buf[xyjbm[0] + 5 * xyjbm[1]] == '.')
+	{
+		blockcode[xyjbm[2]] = '.';
+		xyjbm[2]++;
+		return (1);
+	}
+	else if (buf[(xyjbm[0] + 5 * xyjbm[1])] == '#')
 	{
 		blockcode[xyjbm[2]] = c;
 		xyjbm[2]++;
