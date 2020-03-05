@@ -6,7 +6,7 @@
 /*   By: pmaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 21:19:27 by pmaul             #+#    #+#             */
-/*   Updated: 2020/03/04 21:34:53 by pmaul            ###   ########.fr       */
+/*   Updated: 2020/03/05 21:55:03 by pmaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void			tetri_free(void *content, size_t size)
 
 void			sq_free(char **sq, int sq_size)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (i < sq_size)
@@ -40,7 +40,7 @@ void			sq_free(char **sq, int sq_size)
 
 static int		check(char *blockcode, char **square, int y, int x)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	if (ft_isalpha(blockcode[i]) && ft_isalpha(square[y][x]))
@@ -85,8 +85,8 @@ static int		solve(t_list *blocks, int y, int x, char **square)
 
 char			**fillit(t_list *blocks)
 {
-	int		sq_size;
-	char	**sq;
+	int			sq_size;
+	char		**sq;
 
 	sq_size = (ft_sqrt(ft_lstsize(blocks) * 4));
 	if (!(sq = square(sq_size)))
